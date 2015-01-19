@@ -4,7 +4,6 @@ import com.alu.service.ServicePlugin;
 import com.alu.service.ServiceUtils;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
