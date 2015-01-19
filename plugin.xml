@@ -11,9 +11,7 @@
     <keywords>Service</keywords>
     <repo>https://github.com/Khopa/com.alu.cordova-service.example</repo>
     <issue>https://github.com/Khopa/com.alu.cordova-service.example/issues</issue>
-
-    <js-module src="www/service.js" name="www/js/plugin/service.js"/>
-
+    
     <!-- android -->
     <platform name="android">
 
