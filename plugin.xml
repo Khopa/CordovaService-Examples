@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.alu.cordova-service"
+        version="0.0.1">
+
+    <name>ALU Service</name>
+    <description>Service Plugin for Android. Start any service from Javascript code,
+        and register them to start at device boot</description>
+    <license>Apache 2.0</license>
+    <keywords>Service</keywords>
+    <repo>https://github.com/Khopa/com.alu.cordova-service.example</repo>
+    <issue>https://github.com/Khopa/com.alu.cordova-service.example/issues</issue>
+
+    <js-module src="www/service.js" name="www/js/plugin/service.js"/>
+
+    <!-- android -->
+    <platform name="android">
+
+        <!-- Dependencies on the cordova-service plugin -->
+        <dependency id="com.alu.cordova-service" url="https://github.com/Khopa/com.alu.cordova-service"/>
+
+        <!-- Bind example service -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="com.alu.service.example.ExampleServiceA" android:label="ExampleServiceA" >
+            </service>
+        </config-file>
+
+        <source-file src="src/android/com/alu/service/example/ExampleServiceA.java"
+                     target-dir="src/com/alu/service/example" />
+
+    </platform>
+
+    <!-- ios : TODO -->
+
+
+</plugin>
