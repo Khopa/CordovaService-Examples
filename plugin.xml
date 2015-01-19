@@ -2,12 +2,11 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="com.alu.cordova-service"
+        id="com.alu.cordova-service.example"
         version="0.0.1">
 
-    <name>ALU Service</name>
-    <description>Service Plugin for Android. Start any service from Javascript code,
-        and register them to start at device boot</description>
+    <name>Foreground Service Example Cordova</name>
+    <description>Example use for the com.alu.cordova-service plugin. Describe a minimal foreground android service that echoes on logcat.</description>
     <license>Apache 2.0</license>
     <keywords>Service</keywords>
     <repo>https://github.com/Khopa/com.alu.cordova-service.example</repo>
