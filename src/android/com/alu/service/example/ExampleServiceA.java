@@ -16,11 +16,6 @@ import android.util.Log;
 public class ExampleServiceA extends Service implements Runnable{
 	
 	/**
-	 * Service ID
-	 */
-	private static int ID = 1245;
-	
-	/**
 	 * Thread to log stuff
 	 */
 	private Thread thread;
@@ -41,7 +36,7 @@ public class ExampleServiceA extends Service implements Runnable{
         		this.getClass(),
         		"Service" + this.getClass().getSimpleName(),
         		"This is the service " + this.getClass().getSimpleName() + " running in foreground");
-        startForeground(ID, n);
+        startForeground(startId, n);
         
         
         // Start example thread
