@@ -6,17 +6,17 @@
         version="0.0.1">
 
     <name>Foreground Service Example Cordova</name>
-    <description>Example use for the com.alu.cordova-service plugin. Describe a minimal foreground android service that echoes on logcat.</description>
+    <description>Example use for the Cordova Service plugin. Describe a minimal foreground android service that echoes on logcat.</description>
     <license>Apache 2.0</license>
     <keywords>Service</keywords>
-    <repo>https://github.com/Khopa/com.alu.cordova-service.example</repo>
-    <issue>https://github.com/Khopa/com.alu.cordova-service.example/issues</issue>
-    
+    <repo>https://github.com/Khopa/CordovaService-Examples</repo>
+    <issue>https://github.com/Khopa/CordovaService-Examples/issues</issue>
+
     <!-- android -->
     <platform name="android">
 
         <!-- Dependencies on the cordova-service plugin -->
-        <dependency id="com.alu.cordova-service" url="https://github.com/Khopa/com.alu.cordova-service"/>
+        <dependency id="com.alu.cordova-service" url="https://github.com/Khopa/CordovaService"/>
 
         <!-- Bind example service -->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">

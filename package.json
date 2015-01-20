@@ -1,11 +1,11 @@
 {
     "version": "1.0.0",
-    "name": "com.alu.cordova-service",
-    "cordova_name": "Cordova Service Manager",
-    "description": "Manage background and foreground services",
+    "name": "com.alu.cordova-service.example",
+    "cordova_name": "Cordova Service Example",
+    "description": "Example android service with the Cordova Service plugin",
     "license": "",
-    "repo": "",
-    "issue": "",
+    "repo": "https://github.com/Khopa/CordovaService-Examples",
+    "issue": "https://github.com/Khopa/CordovaService-Examples/issues",
     "keywords": [
         "Service",
         "Foreground Service"
