@@ -14,7 +14,7 @@ import android.util.Log;
  * @author Clement Perreau
  */
 public class ExampleServiceA extends Service implements Runnable{
-
+	
 	/**
 	 * Service ID
 	 */
@@ -34,13 +34,13 @@ public class ExampleServiceA extends Service implements Runnable{
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		super.onStartCommand(intent, flags, startId);
 		
-		Log.d(ServicePlugin.LOG_KEY, "Service A is starting");
+		Log.d(ServicePlugin.LOG_KEY, "Service " + this.getClass().getSimpleName() + " is starting");
         
 		// Start in foreground
         Notification n = ServiceUtils.getDefaultForegroundNotification(this.getApplicationContext(),
         		this.getClass(),
-        		"Service A",
-        		"This is the service A running in foreground");
+        		"Service" + this.getClass().getSimpleName(),
+        		"This is the service " + this.getClass().getSimpleName() + " running in foreground");
         startForeground(ID, n);
         
         
@@ -55,7 +55,7 @@ public class ExampleServiceA extends Service implements Runnable{
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		Log.d(ServicePlugin.LOG_KEY, "Service A is being destroyed");
+		Log.d(ServicePlugin.LOG_KEY, "Service " + this.getClass().getSimpleName() + " is being destroyed");
 		running = false;
 	}
 	
@@ -70,14 +70,14 @@ public class ExampleServiceA extends Service implements Runnable{
 	public void run() {
 		while(running){
 			try {
-				Log.d(ServicePlugin.LOG_KEY, "Hello from Service A");
+				Log.d(ServicePlugin.LOG_KEY, "Hello from Service " + this.getClass().getSimpleName());
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 				break;
 			}
 		}
-		Log.d(ServicePlugin.LOG_KEY, "Service A thread is dead");
+		Log.d(ServicePlugin.LOG_KEY, "Service " + this.getClass().getSimpleName() + " thread is dead");
 	}
 	
 }

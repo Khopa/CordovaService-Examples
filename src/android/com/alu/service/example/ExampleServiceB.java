@@ -6,9 +6,6 @@ package com.alu.service.example;
  * @author Clement Perreau
  */
 public class ExampleServiceB extends ExampleServiceA {
-
-	protected String name = "B";
 	
-	protected int ID = 34158;
 	
 }
