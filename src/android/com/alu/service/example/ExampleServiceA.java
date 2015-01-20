@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * Example service that runs a logging thread on foreground
+ * @author Clement Perreau
+ */
 public class ExampleServiceA extends Service implements Runnable{
 
 	/**
@@ -16,44 +20,64 @@ public class ExampleServiceA extends Service implements Runnable{
 	 */
 	private static int ID = 1245;
 	
+	/**
+	 * Thread to log stuff
+	 */
+	private Thread thread;
+	
+	/**
+	 * Thread running
+	 */
+	private boolean running = false;
+	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		
 		super.onStartCommand(intent, flags, startId);
-		Log.d(ServicePlugin.LOG_KEY, "Service A starting");
+		
+		Log.d(ServicePlugin.LOG_KEY, "Service A is starting");
         
+		// Start in foreground
         Notification n = ServiceUtils.getDefaultForegroundNotification(this.getApplicationContext(),
         		this.getClass(),
         		"Service A",
         		"This is the service A running in foreground");
         startForeground(ID, n);
         
-        Log.d(ServicePlugin.LOG_KEY, "This is service A starting");
         
-        new Thread(this).start();
+        // Start example thread
+        running = true;
+        thread = new Thread(this);
+        thread.start();
         
 		return(START_STICKY);
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		Log.d(ServicePlugin.LOG_KEY, "Service A is being destroyed");
+		running = false;
 	}
 	
 	
 	@Override
 	public IBinder onBind(Intent intent) {
-		
 		return null;
 	}
 
 
 	@Override
 	public void run() {
-		while(true){
+		while(running){
 			try {
-				Thread.sleep(1500);
-				Log.d(ServicePlugin.LOG_KEY, "I'm the Service A (foreground service)");
+				Log.d(ServicePlugin.LOG_KEY, "Hello from Service A");
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 				break;
 			}
 		}
+		Log.d(ServicePlugin.LOG_KEY, "Service A thread is dead");
 	}
-
+	
 }
