@@ -2,7 +2,7 @@ Example usage for the CordovaService plugin (https://github.com/Khopa/CordovaSer
 
 ##Installing examples :##
 
-- Install this folder as a plugin (This will also install CordovaService)
+- Install this repository as a plugin (This will also install CordovaService)
 
 ```
 cordova plugin add https://github.com/Khopa/CordovaService-Examples
@@ -31,12 +31,11 @@ service.startService("com.alu.service.example.ExampleServiceB",
                 });
 ```
 
-
-The services are registered in the manifest. If you want to start your own service, you'll need to register them in the manifest too.
+The services are registered in the manifest. If you want to start your own service, you'll need to register them in the manifest too. As these are foreground services, when running, a notification icon should appear in the android status bar.
 
 ##Checking the log messages##
 
-Run the following command in the terminal
+Run the following command in the terminal to check the log messages sent by the examples services.
 
 ```
 adb logcat ServicePlugin:d *:S
@@ -66,4 +65,4 @@ D/ServicePlugin(16664): Service ExampleServiceB is being destroyed
 D/ServicePlugin(16664): Service ExampleServiceB thread is dead
 ```
 
-See the full doc for the javascript interface here : https://github.com/Khopa/CordovaService
+See the full documentation for the javascript interface here : https://github.com/Khopa/CordovaService
